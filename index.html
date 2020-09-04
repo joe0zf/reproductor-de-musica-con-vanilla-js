@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.materialdesignicons.com/5.3.45/css/materialdesignicons.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <title>mus</title>
+</head>
+<body>
+    <nav>
+
+    </nav>
+    <section>
+        <div>
+            
+        </div>
+    </section>
+   
+    <div class="reproductor">
+        <div class = "caratula">
+            <img src="img/egoist.jpg" id="caratula">
+        </div>
+        <div class="container-controles">
+            <div class="controles">
+                <button id="prev-btn"><span class="control mdi mdi-skip-backward"></span></button>
+                <button id="play-btn"><span id="play-icon" class="control mdi mdi-play"></span></button>
+                
+                <button id="next-btn"><span class="control mdi mdi-skip-forward"></span></button>
+                
+            </div>
+            <input type="range" class="progress-bar" name="progress-bar" id="progress-bar" min="0" step="1">
+        </div>
+        <div class="volume">
+            <span class="control mdi mdi-volume-high"></span>
+            <input type="range" name="volume" id="volume-control" min="0" max="1" step="0.01">
+        </div>
+    </div>
+    <audio id="cancion" src="audio/egoist.mp3"></audio>
+    
+    <script src="js/script.js"></script>
+</body>
+</html>

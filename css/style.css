@@ -1,0 +1,74 @@
+*{
+    border:0px;
+    margin:0px;
+    padding:0px;
+}
+
+body{
+    background-color:#1E1E1E ;
+}
+
+.reproductor{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    position: fixed;
+    bottom: 0px;
+    background-color:#252526;
+    width: 100vw;
+    padding:0.4em 1em 0.4em 1em;
+}
+.caratula img{
+    width: 100px;
+    height: 100px;
+    border-radius:50%;
+    animation-name: girar;
+    animation-play-state: paused;
+    animation-direction: normal;
+    animation-iteration-count: infinite;
+    animation-duration: 3s;
+    animation-timing-function: linear;
+}
+.controles{
+    width: 40vw;
+    display: flex;
+    justify-content: space-around;
+}
+.controles button{
+    background-color: transparent;
+    cursor: pointer;
+}
+.control{
+    color:#DEDCDE;
+    font-size: 3em;
+}
+.volume{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.volume input{
+    cursor: pointer;
+}
+
+
+@keyframes girar{
+    from{
+        transform:rotate(0deg);
+    }
+    to{
+        transform: rotate(360deg);
+    }
+}
+
+.container-controles{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.progress-bar{
+    width: 100%;
+    cursor: pointer;
+}
