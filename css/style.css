@@ -103,6 +103,7 @@ body{
     display: flex;
     justify-content: flex-start;
     align-items: center;
+    cursor: pointer;
 }
 .list-item img{
     width: 100px;

@@ -190,7 +190,28 @@ function generarLista(){
 generarLista()
 
 contenedor_lista.addEventListener('click',(event)=>{
-    console.log(event)
-    reproducir(event.target.id)
-    pos = event.target.id
+    if(event.target.matches('.list-item img'))
+    {
+        reproducir(event.target.parentNode.id)
+        pos = event.target.parentNode.id
+    }
+    else if(event.target.matches('.data'))
+    {
+        reproducir(event.target.parentNode.id)
+        pos = event.target.parentNode.id
+    }
+    else if(event.target.matches('.data div'))
+    {
+        reproducir(event.target.parentNode.parentNode.id)
+        pos = event.target.parentNode.parentNode.id
+    }
+    else if(event.target.matches('.data div span')){
+        reproducir(event.target.parentNode.parentNode.parentNode.id)
+        pos = event.target.parentNode.parentNode.parentNode.id
+    }
+    else if(event.target.matches('.list-item')){
+        reproducir(event.target.id)
+        pos = event.target.id
+    }
+   
 })
