@@ -72,3 +72,43 @@ body{
     width: 100%;
     cursor: pointer;
 }
+
+/*Estilos para el menú */
+.main-menu{
+    width: 100%;
+    height: 60px;
+    background-color:#292D3E ;
+    position: fixed;
+}
+
+/*Estilos para lista de reproduccion*/
+.container{
+    display: flex;
+    justify-content: center;
+    
+}
+.list-container{
+    width: 80vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    margin-top: 100px;
+}
+
+.list-item{
+    background-color: #25293A;
+    width: 50%;
+    margin-top: 15px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+.list-item img{
+    width: 100px;
+    height: 100px;
+}
+.data{
+    margin-left: 2em;
+    color: #DEDCDE;
+}

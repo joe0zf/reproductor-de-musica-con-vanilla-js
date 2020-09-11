@@ -116,21 +116,21 @@ cancion.addEventListener('ended',()=>{
 
 let canciones = [
     {
-        id:1,
+        id:0,
         artista:'Egoist',
         titulo:'Unknow',
         caratula:'egoist.jpg',
         archivo:'egoist.mp3'
     },
     {
-        id:2,
+        id:1,
         artista:'Kodaline',
         titulo:'Unknow',
         caratula:'kodaline.jpg',
         archivo:'kodaline.m4a'
     },
     {
-        id:3,
+        id:2,
         artista:'One Ok Rock',
         titulo:'You can do it',
         caratula:'oor-you can do it.jpg',
@@ -168,4 +168,29 @@ prev_btn.addEventListener('click',()=>{
     {pos--
         reproducir(pos)
     }
+})
+
+/*Generar lista de canciones */
+let contenedor_lista = document.getElementById('list-container')
+function generarLista(){
+    for(let item of canciones)
+    {
+        contenedor_lista.insertAdjacentHTML('beforeend',`
+        <article class="list-item" id="${item.id}">
+            <img src="img/${item.caratula}">
+            <div class="data">
+                <div>artista: <span>${item.artista}</span></div>
+                <div>Título: <span>${item.titulo}</span></div>
+                
+            </div>
+        </article>
+        `)
+    }
+}
+generarLista()
+
+contenedor_lista.addEventListener('click',(event)=>{
+    console.log(event)
+    reproducir(event.target.id)
+    pos = event.target.id
 })
