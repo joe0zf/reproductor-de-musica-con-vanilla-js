@@ -119,6 +119,7 @@ let canciones = [
         id:0,
         artista:'Egoist',
         titulo:'Unknow',
+        genero:'pop',
         caratula:'egoist.jpg',
         archivo:'egoist.mp3'
     },
@@ -126,6 +127,7 @@ let canciones = [
         id:1,
         artista:'Kodaline',
         titulo:'Unknow',
+        genero:'indie',
         caratula:'kodaline.jpg',
         archivo:'kodaline.m4a'
     },
@@ -133,9 +135,27 @@ let canciones = [
         id:2,
         artista:'One Ok Rock',
         titulo:'You can do it',
+        genero:'rock',
         caratula:'oor-you can do it.jpg',
         archivo:'oor-you can do it.mp3'
-    }
+    },
+    {
+        id:3,
+        artista:'Mago de oz',
+        titulo:'Abracadabra',
+        genero:'rock',
+        caratula:'ilussia.jpg',
+        archivo:'Mago de oz Abracadabra.mp3'
+    },
+    {
+        id:4,
+        artista:'Mago de oz',
+        titulo:'Cadavaria',
+        genero:'rock',
+        caratula:'ilussia.jpg',
+        archivo:'Mago de oz Cadaveria.mp3'
+    },
+    
 ]
 
 
@@ -172,22 +192,24 @@ prev_btn.addEventListener('click',()=>{
 
 /*Generar lista de canciones */
 let contenedor_lista = document.getElementById('list-container')
-function generarLista(){
-    for(let item of canciones)
+function generarLista(songs){
+    contenedor_lista.innerHTML = '';
+    for(let item of songs)
     {
         contenedor_lista.insertAdjacentHTML('beforeend',`
         <article class="list-item" id="${item.id}">
             <img src="img/${item.caratula}">
             <div class="data">
-                <div>artista: <span>${item.artista}</span></div>
                 <div>Título: <span>${item.titulo}</span></div>
+                <div>artista: <span>${item.artista}</span></div>
+                
                 
             </div>
         </article>
         `)
     }
 }
-generarLista()
+generarLista(canciones)
 
 contenedor_lista.addEventListener('click',(event)=>{
     if(event.target.matches('.list-item img'))
@@ -214,4 +236,21 @@ contenedor_lista.addEventListener('click',(event)=>{
         pos = event.target.id
     }
    
+})
+
+/*filtra por genero */
+
+let filtrar_genero = document.getElementById('filter-genere')
+
+filtrar_genero.addEventListener('change',(event)=>{
+    
+    if(filtrar_genero.value === 'all')
+    {
+        generarLista(canciones)
+    }
+    else{
+        let filtrado = canciones.filter(el => el.genero === filtrar_genero.value)
+        generarLista(filtrado)
+    }
+
 })
