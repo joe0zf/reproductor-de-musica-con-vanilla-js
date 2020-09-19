@@ -254,3 +254,17 @@ filtrar_genero.addEventListener('change',(event)=>{
     }
 
 })
+
+let filter_title = document.getElementById('filter-title')
+
+filter_title.addEventListener('keyup',()=>{
+    if(filter_title.value!='')
+    {
+        let fil = canciones.filter(elemento=>elemento.titulo.toLowerCase().includes(filter_title.value.toLowerCase()))
+        generarLista(fil)
+    }
+    else{
+        generarLista(canciones)
+    }
+    
+})
